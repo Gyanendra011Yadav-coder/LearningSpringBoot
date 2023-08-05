@@ -14,7 +14,7 @@ import java.util.List;
  * in Project: LearningSpringBoot
  */
 
-@Controller
+@RestController
 public class ReturningCollection {
 
     @RequestMapping("/returnList")
