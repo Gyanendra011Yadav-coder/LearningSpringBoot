@@ -17,4 +17,6 @@ public interface SubscriptionRepository extends JpaRepository<Message, Long> {
             "JOIN Subscription s ON u.userId = s.producer.userId " +
             "WHERE s.subscriber.userId = ?1")
     List<Object[]> findMessagesBySubscriber(Long subscriberId);
+
+    List<Object[]> getMessagesBySubscriber(Long subscriberId);
 }

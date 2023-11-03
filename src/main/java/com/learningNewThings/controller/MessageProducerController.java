@@ -1,6 +1,7 @@
 package com.learningNewThings.controller;
 
 import com.learningNewThings.dao.MessageRepository;
+import com.learningNewThings.service.MessageServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -19,11 +20,11 @@ import java.util.List;
 public class MessageProducerController {
 
     @Autowired
-    private MessageRepository messageRepository;
+    private MessageServiceImpl messageServiceImpl;
 
     @GetMapping
     public List<Object[]> getMessagesByProducer(@PathVariable Long producerId) {
-        return messageRepository.findMessagesWithAuthors();
+        return messageServiceImpl.findMessagesWithAuthors();
     }
 }
 

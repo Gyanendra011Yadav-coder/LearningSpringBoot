@@ -2,6 +2,7 @@ package com.learningNewThings.controller;
 
 import com.learningNewThings.dao.RoleRepository;
 import com.learningNewThings.entity.Role;
+import com.learningNewThings.service.RoleServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -15,11 +16,11 @@ import java.util.List;
 public class RoleController {
 
     @Autowired
-    private RoleRepository roleRepository;
+    private RoleServiceImpl roleServiceImpl;
 
     @GetMapping
     public List<Role> getAllRoles() {
-        return roleRepository.findAll();
+        return roleServiceImpl.getAllRoles();
     }
 }
 

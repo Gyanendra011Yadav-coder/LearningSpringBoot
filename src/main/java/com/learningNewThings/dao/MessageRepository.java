@@ -9,6 +9,8 @@ import java.util.List;
 
 @Repository
 public interface MessageRepository extends JpaRepository<Message, Long> {
+    List<Message> getAllMessages();
+
     @Query("SELECT m, u.username AS author FROM messages m JOIN User u ON m.user = u")
     List<Object[]> findMessagesWithAuthors();
 }
